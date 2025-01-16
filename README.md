@@ -21,7 +21,7 @@ The problem, is that this is very long and tedious to do, for it this plugin
 # Installation
 Copy `solder_mask_modifier.py` to the `scripting/plugins` path, in my case it would be in this path
 
-> `C:\Users\Jairo\Documents\KiCad\8.0\scripting/plugins`.
+> `C:\Users\Jairo\Documents\KiCad\8.0\scripting\plugins`.
 
 # Usage
 With the `.py` in the correct path, open the pcb editor and run the plugin
