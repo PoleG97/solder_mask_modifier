@@ -1,33 +1,35 @@
 # solder_mask_modifier
-Este plugin permite modificar la "solder mask" de todos los PADS de una lista de componentes.
+This plugin allows to modify the solder mask of all PADS in a list of components.
 
-## Problema que soluciona
-Está pensado para solucionar el error de DRC **"Solder mask aperture bridges items with different nets"**. 
+## Problem solved
+It is intended to solve the DRC bug **"Solder mask aperture bridges items with different nets ”**. 
 
-Una de las formas en la que la gente está resolviendo este problema, es modificando la severidad de las DRC o permitiendo los gridges.
+One of the ways people are solving this problem is by modifying the DRC severity or allowing gridges.
 
-Este plugin permite eliminar el problema, no sólo parchearlo.
+This plugin allows you to eliminate the problem, not just patch it.
 
 ![](img/image.png)
 
-## Solución en la que se basa
-Para arreglarlo de forma eficaz, habría que
-1. Abrir el editor de la huella del componente
-2. En el editor, modificar cada uno de los pads
-3. Guardar el cambio
+## Solution on which it is based
+To fix it effectively, you should
+1. Open the footprint editor of the component.
+2. In the editor, modify each one of the pads.
+3. Save the change
 
-El problema, es que esto es muy largo y aburrido de hacer, para ello este plugin
+The problem, is that this is very long and tedious to do, for it this plugin
 
-# Instalación
-Copiar `solder_mask_modifier.py` a la ruta `scripting/plugins`, en mi caso sería en esta ruta
+# Installation
+Copy `solder_mask_modifier.py` to the `scripting/plugins` path, in my case it would be in this path
 
-> `C:\Users\jairo\Documents\KiCad\8.0\scripting\plugins`
+> `C:\C:\UsersJairoDocuments\KiCad\8.0\scripting/plugins`.
 
-# Uso
-Con el `.py` en la ruta correcta, abrir el editor de pcb y ejecutar el plugin
+# Usage
+With the `.py` in the correct path, open the pcb editor and run the plugin
 
-`tools > external plugins > Sodler Mask Modifier`
+Tools > external plugins > Sodler Mask Modifier`.
 
-Ahora, ponemos el nombre de los componentes (respetando mayúsculas y minúsculas), y en caso de ser varios componentes, ponerlos seguidos de comas y sin espacios `U3,CLK2,j2`. Luego se establece el tamaño de la solder mask (normalmente 0).
+Now, we put the name of the components (respecting upper and lower case), and in case of being several components, put them followed by commas and without spaces `U3,CLK2,j2`. Then set the size of the solder mask (usually 0).
 
-Por último, `Aplicar cambios`
+Finally, `Apply changes` and `close` (don`t use X)
+
+Translated with DeepL.com (free version)
