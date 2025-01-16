@@ -4,7 +4,7 @@ This plugin allows to modify the solder mask of all PADS in a list of components
 ## Problem solved
 It is intended to solve the DRC bug **"Solder mask aperture bridges items with different nets ”**. 
 
-One of the ways people are solving this problem is by modifying the DRC severity or allowing gridges.
+One of the ways people are solving this problem is by modifying the DRC severity or allowing bridges.
 
 This plugin allows you to eliminate the problem, not just patch it.
 
