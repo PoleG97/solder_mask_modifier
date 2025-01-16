@@ -1,6 +1,6 @@
 import pcbnew
 import wx
-import os
+
 
 class SolderMaskModifierPlugin(pcbnew.ActionPlugin):
     def defaults(self):
@@ -10,16 +10,14 @@ class SolderMaskModifierPlugin(pcbnew.ActionPlugin):
         self.icon_file_name = ""  # Opcional: puedes agregar un ícono si lo deseas
 
     def Run(self):
-        # Mostrar la ventana del plugin
-        app = wx.App(False)
-        frame = SolderMaskModifierDialog(None, "Solder Mask Modifier")
-        frame.Show()
-        app.MainLoop()
+        # Crear una instancia de la ventana del plugin y mostrarla
+        self.frame = SolderMaskModifierDialog(None, "Solder Mask Modifier")
+        self.frame.Show()
 
 
 class SolderMaskModifierDialog(wx.Frame):
     def __init__(self, parent, title):
-        super(SolderMaskModifierDialog, self).__init__(parent, title=title, size=(400, 300))
+        super(SolderMaskModifierDialog, self).__init__(parent, title=title, size=(400, 400))
 
         # Configurar la ventana principal
         panel = wx.Panel(self)
@@ -37,12 +35,17 @@ class SolderMaskModifierDialog(wx.Frame):
         btn_aplicar = wx.Button(panel, label="Aplicar Cambios")
         btn_aplicar.Bind(wx.EVT_BUTTON, self.on_apply_changes)
 
+        # Botón para cerrar la ventana
+        btn_cerrar = wx.Button(panel, label="Cerrar")
+        btn_cerrar.Bind(wx.EVT_BUTTON, self.on_close)
+
         # Agregar elementos al layout
         vbox.Add(lbl_referencias, flag=wx.ALL, border=10)
         vbox.Add(self.txt_referencias, flag=wx.ALL | wx.EXPAND, border=10)
         vbox.Add(lbl_expansion, flag=wx.ALL, border=10)
         vbox.Add(self.txt_expansion, flag=wx.ALL, border=10)
         vbox.Add(btn_aplicar, flag=wx.ALL | wx.ALIGN_CENTER, border=10)
+        vbox.Add(btn_cerrar, flag=wx.ALL | wx.ALIGN_CENTER, border=10)
 
         panel.SetSizer(vbox)
 
@@ -83,6 +86,11 @@ class SolderMaskModifierDialog(wx.Frame):
         pcbnew.Refresh()
         wx.MessageBox("Cambios aplicados correctamente.", "Éxito", wx.OK | wx.ICON_INFORMATION)
 
+    def on_close(self, event):
+        # Cerrar la ventana y liberar recursos
+        self.Destroy()
+
 
 # Registrar el plugin
 SolderMaskModifierPlugin().register()
+
