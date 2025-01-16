@@ -26,7 +26,7 @@ Copy `solder_mask_modifier.py` to the `scripting/plugins` path, in my case it wo
 # Usage
 With the `.py` in the correct path, open the pcb editor and run the plugin
 
-Tools > external plugins > Sodler Mask Modifier`.
+`Tools > external plugins > Sodler Mask Modifier`.
 
 Now, we put the name of the components (respecting upper and lower case), and in case of being several components, put them followed by commas and without spaces `U3,CLK2,j2`. Then set the size of the solder mask (usually 0).
 
