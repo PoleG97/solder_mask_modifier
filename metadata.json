@@ -1,0 +1,12 @@
+{
+    "name": "Solder Mask Modifier",
+    "description": "Modify the solder mask expansion for specific component pins.",
+    "author": "PoleG97",
+    "version": "1.0",
+    "license": "MIT",
+    "icon": "",
+    "repository": "https://github.com/PoleG97/solder_mask_modifier.git",
+    "documentation": "https://github.com/PoleG97/solder_mask_modifier.git",
+    "compatible_version": "8.0",
+    "category": "Modify PCB"
+}
