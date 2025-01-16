@@ -31,5 +31,3 @@ With the `.py` in the correct path, open the pcb editor and run the plugin
 Now, we put the name of the components (respecting upper and lower case), and in case of being several components, put them followed by commas and without spaces `U3,CLK2,j2`. Then set the size of the solder mask (usually 0).
 
 Finally, `Apply changes` and `close` (don`t use X)
-
-Translated with DeepL.com (free version)
